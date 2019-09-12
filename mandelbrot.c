@@ -4,7 +4,6 @@ void init_mandel(t_data *all)
 {
     all->color1 = 0x800080;
 	all->color2 = 0xffff1a;
-
     all->minReal = -2.0;
     all->maxReal = 1.0;
     all->minImagine = -1.2;

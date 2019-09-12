@@ -2,13 +2,24 @@
 
 /*
 ** Magic start here. Let's see what fractol they want to see....
+
 */
+
+
+static void init_init(t_data *all)
+{
+    all->real_change = 0;
+    all->imagine_change = 0;
+
+}
+
 int		main(int argc, char **argv)
 {
 	t_data *all = malloc(sizeof(t_data));
-	all->image_height = 1200;
-	all->image_width = 1200;
+	all->image_height = 1000;
+	all->image_width = 1000;
 	all->zoom = 1;
+	init_init(all);
 
 	if (argc == 2)
 	{
@@ -33,7 +44,7 @@ int		main(int argc, char **argv)
 			ft_printf("Usage: ./fractol [julia] or [mandelbrot] or [other]");
 		mlx_hook(all->win_ptr, 2, 5, exit_key, all);
 		mlx_mouse_hook(all->win_ptr, mouse_manage, all);
-		// mlx_hook(all->win_ptr, 6, 5, mouse_drag, all);
+		mlx_hook(all->win_ptr, 6, 5, mouse_drag, all);
 		mlx_loop(all->mlx_ptr);
 		free(all);
 	}

@@ -8,6 +8,9 @@
 # include <stdbool.h>
 # include<stdlib.h>
 # include<time.h>
+
+
+#include<stdio.h>
  
 #define pi M_PI
 
@@ -29,8 +32,8 @@ typedef struct	s_all
 	double		minImagine;
 	int			mouse_x;
 	int			mouse_y;
-	int			real_change;
-	int			imagine_change;
+	double			real_change;
+	double			imagine_change;
 	unsigned int maxIterations;
 	double		z_re;
 	double		z_im;
@@ -45,10 +48,10 @@ void	draw_julia(t_data *all);
 int		mouse_hook(int mousecode, int x, int y, t_data *all);
 void	change_julia(t_data *all, int mousecode);
 int		exit_key(int key, t_data *all);
-// void	zoom(int mouse_re, int mouse_im, t_data *all);
-// double	interpolate(double start, double end, double interpolation);
-// int		mouse_drag(int x, int y, t_data *all);
-// void	mouse_manage_if(int mousecode, int x, int y, t_data *all);
+void		ft_zoom(int mouse_re, int mouse_im, t_data *all);
+double	interpolate(double start, double end, double interpolation);
+int		mouse_drag(int x, int y, t_data *all);
+void	mouse_manage_if(int mousecode, int x, int y, t_data *all);
 int		mouse_manage(int mousecode, int x, int y, t_data *all);
 void	zoom_it(int x, int y, t_data *all);
 void 	init_julia(t_data *all);
